@@ -32,6 +32,13 @@ export default function App() {
         setMicrophones(mics)
         if (cams.length > 0) setSelectedCamera(cams[0].deviceId)
         if (mics.length > 0) setSelectedMic(mics[0].deviceId)
+        
+        // Auto-request access immediately after devices are ready
+        setTimeout(() => {
+          if (status === 'waiting for permission') {
+            requestAccess()
+          }
+        }, 100)
       } catch (err) {
         console.error('Error enumerating devices:', err)
       }
@@ -117,16 +124,6 @@ export default function App() {
       cleanup()
     }
   }
-
-  // Auto-request access on mount when devices are ready
-  useEffect(() => {
-    if (selectedCamera && selectedMic && status === 'waiting for permission') {
-      const timer = setTimeout(() => {
-        requestAccess()
-      }, 500)
-      return () => clearTimeout(timer)
-    }
-  }, [selectedCamera, selectedMic, status])
 
   const handleRestart = () => {
     requestAccess()
