@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+# Allow crawling of public assets
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://webcammictest.net/sitemap.xml
