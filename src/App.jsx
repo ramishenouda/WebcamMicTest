@@ -249,7 +249,9 @@ export default function App() {
   return (
     <div className="app">
       <div className="header">
-        <div className="logo">WebcamMicTest</div>
+        <div className="logo">
+          WebcamMicTest
+        </div>
       </div>
 
 
@@ -344,7 +346,7 @@ export default function App() {
           disabled={status !== 'working'}
           title="Save Screenshot"
         >
-          📷 Take a picture
+          <img src="/camera.png" alt="Camera" className="btn-icon" />
         </button>
       </div>
     </div>

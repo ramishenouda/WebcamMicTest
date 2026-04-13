@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WebcamMicTest</title>
+  <script>
+    // GitHub Pages SPA workaround
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    const repo = 'webcammictest';
+    
+    if (pathSegments[0] === repo) {
+      pathSegments.shift();
+    }
+    
+    window.location.replace(
+      window.location.origin +
+      (pathSegments.length ? '/' + pathSegments.join('/') : '/') +
+      window.location.search
+    );
+  </script>
+</head>
+<body></body>
+</html>
