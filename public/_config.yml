@@ -1,0 +1,12 @@
+markdown: kramdown
+exclude:
+  - node_modules
+  - .gitignore
+  - README.md
+  - package.json
+  - vite.config.js
+
+# Tell GitHub Pages to not process these files
+include:
+  - .nojekyll
+  - .well-known
